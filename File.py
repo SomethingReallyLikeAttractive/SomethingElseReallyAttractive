@@ -3,7 +3,7 @@ from Convertor import Convertor
 class File:
     _fileText = None
 
-    def _init_(self, fileName):
+    def __init__(self, fileName):
         fileOpened = open(fileName, "r")
         self._fileText = fileOpened.read()
 

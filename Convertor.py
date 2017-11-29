@@ -1,15 +1,21 @@
 import RPi.GPIO as GPIO
 
+pin1 = 14
+pin2 = 18
+pin3 = 23
+pin4 = 25
+pin5 = 7
+pin6 = 3
 
 class Convertor:
-    def _init_(self):
-        GPIO.setmode(GPIO.BOARD)
-        GPIO.setup(16, GPIO.OUT)
-        GPIO.setup(20, GPIO.OUT)
-        GPIO.setup(21, GPIO.OUT)
-        GPIO.setup(13, GPIO.OUT)
-        GPIO.setup(19, GPIO.OUT)
-        GPIO.setup(26, GPIO.OUT)
+    def __init__(self):
+        GPIO.setmode(GPIO.BCM)
+        GPIO.setup(pin1, GPIO.OUT)
+        GPIO.setup(pin2, GPIO.OUT)
+        GPIO.setup(pin3, GPIO.OUT)
+        GPIO.setup(pin4, GPIO.OUT)
+        GPIO.setup(pin5, GPIO.OUT)
+        GPIO.setup(pin6, GPIO.OUT)
 
     # Convert unrecognizable character into Unrecognizable(R).
     def filterUnrecognizable(self, c):
@@ -33,34 +39,34 @@ class Convertor:
         low = list()
 
         if booleanValues[0] == 1:
-            high.append(16)
+            high.append(pin1)
         else:
-            low.append(16)
+            low.append(pin1)
 
         if booleanValues[1] == 1:
-            high.append(20)
+            high.append(pin2)
         else:
-            low.append(20)
+            low.append(pin2)
 
         if booleanValues[2] == 1:
-            high.append(21)
+            high.append(pin3)
         else:
-            low.append(21)
+            low.append(pin3)
 
         if booleanValues[3] == 1:
-            high.append(13)
+            high.append(pin4)
         else:
-            low.append(13)
+            low.append(pin4)
 
         if booleanValues[4] == 1:
-            high.append(19)
+            high.append(pin5)
         else:
-            low.append(19)
+            low.append(pin5)
 
         if booleanValues[5] == 1:
-            high.append(26)
+            high.append(pin6)
         else:
-            low.append(26)
+            low.append(pin6)
 
         for c in high:
             print(c)
