@@ -3,8 +3,6 @@ from Convertor import ENGLISH
 import RPi.GPIO as GPIO
 import time
 import os
-from Display import Display
-
 
 BUTTONPIN = 21
 
@@ -12,7 +10,6 @@ GPIO.setwarnings(False)
 GPIO.setmode(GPIO.BCM)
 GPIO.setup(BUTTONPIN, GPIO.IN)
 
-#display = Display()
 
 try:
     while True:
@@ -20,7 +17,6 @@ try:
         detectedLoader = FileLoader("Picwords.txt")
         print("The following word is detected: ")
         print(detectedLoader.returnText())
-        #display.updateText(detectedLoader.returnText())
         detectedLoader.sendTextToRasp()
 except KeyboardInterrupt:
     pass
