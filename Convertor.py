@@ -75,6 +75,7 @@ class Convertor:
             print(c)
         #GPIO.output(high, 1)
         #GPIO.output(low, 0)
+	GPIO.cleanup()
 
 
 dict = {'A':[1,0,0,0,0,0],
