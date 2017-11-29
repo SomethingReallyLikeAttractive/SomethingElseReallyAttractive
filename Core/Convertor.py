@@ -67,13 +67,14 @@ ENGLISH = setUpDict()
 
 class Convertor:
     def __init__(self):
-        GPIO.setup(PIN1, GPIO.OUT)
+        GPIO.setmode(GPIO.BCM)
+	GPIO.setup(PIN1, GPIO.OUT)
         GPIO.setup(PIN2, GPIO.OUT)
         GPIO.setup(PIN3, GPIO.OUT)
         GPIO.setup(PIN4, GPIO.OUT)
         GPIO.setup(PIN5, GPIO.OUT)
         GPIO.setup(PIN6, GPIO.OUT)
-        GPIO.setmode(GPIO.BCM)
+       
     # Convert unrecognizable character into Unrecognizable(R); convert lower cases to upper cases.
     def processString(self, c):
         if c.islower():
