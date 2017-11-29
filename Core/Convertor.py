@@ -6,6 +6,7 @@ PIN3 = 23
 PIN4 = 25
 PIN5 = 7
 PIN6 = 12
+GPIO.setmode(GPIO.BCM)
 
 def setUpDict():
     englishDict = dict()
@@ -72,7 +73,7 @@ class Convertor:
         GPIO.setup(PIN4, GPIO.OUT)
         GPIO.setup(PIN5, GPIO.OUT)
         GPIO.setup(PIN6, GPIO.OUT)
-
+	GPIO.setmode(GPIO.BCM)
     # Convert unrecognizable character into Unrecognizable(R); convert lower cases to upper cases.
     def processString(self, c):
         if c.islower():
@@ -126,6 +127,6 @@ class Convertor:
         else:
             low.append(PIN6)
 
-        GPIO.output(high, 1)
-        GPIO.output(low, 0)
+        #GPIO.output(high,1)
+        #GPIO.output(low,0)
         GPIO.cleanup()
