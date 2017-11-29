@@ -1,5 +1,6 @@
 from Convertor import Convertor
 import time
+import requests
 
 class Loader:
     text = ""
@@ -9,6 +10,7 @@ class Loader:
         for c in self.text:
             a = convertor.processString(c)
             convertor.output(convertor.convert(a))
+            r = requests.post('http://0.0.0.0:5000',data=a)
             time.sleep(1)
 
     def returnText(self):
