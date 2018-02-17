@@ -5,6 +5,3 @@ print('a' in ENGLISH)
 
 b = File("xx.txt")
 b.sendFileToRasp()
-
-
-
