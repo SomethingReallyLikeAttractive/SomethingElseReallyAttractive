@@ -59,7 +59,7 @@ def setUpDict():
     englishDict['>'] = [0,0,1,1,1,0]
     englishDict['/'] = [0,0,1,1,0,0]
     englishDict['"'] = [0,1,1,0,0,1]
-    englishDict['{'] = [0,0,1,0,0,0]
+    englishDict['{'] = [0,0,1,0,0,0] #Unrecognizable.
     return englishDict
 
 ENGLISH = setUpDict()
