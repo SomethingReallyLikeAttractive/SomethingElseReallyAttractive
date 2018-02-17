@@ -17,8 +17,8 @@ while True:
     GPIO.setup(BUTTONPIN,GPIO.IN)
 
     input()
-    result = subprocess.Popen("fswebcam -r 4352x3264 --no-banner img.jpg && tesseract img.jpg stdout", stdout = subprocess.PIPE)
-    wordDetected = result.stdout.read()
+    result = subprocess.check_output("fswebcam -r 4352x3264 --no-banner img.jpg && tesseract img.jpg stdout)
+    wordDetected = result.decode("utf-8")
     detectedLoader = StringLoader(wordDetected)
     detectedLoader.sendTextToRasp()
     time.sleep(0.05)
