@@ -5,7 +5,7 @@ PIN2 = 18
 PIN3 = 23
 PIN4 = 25
 PIN5 = 7
-PIN6 = 3
+PIN6 = 12
 
 def setUpDict():
     englishDict = dict()
