@@ -9,6 +9,7 @@ pin6 = 3
 
 class Convertor:
     def __init__(self):
+        GPIO.cleanup()
         GPIO.setmode(GPIO.BCM)
         GPIO.setup(pin1, GPIO.OUT)
         GPIO.setup(pin2, GPIO.OUT)
