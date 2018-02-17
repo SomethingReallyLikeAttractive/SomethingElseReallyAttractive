@@ -1,6 +1,6 @@
 import poplib
 import Loader
-
+#vedantchan@gmail.com pop.gmail.com #
 class Email:
     POP3Agent = None
     emailAddress = ""
@@ -15,10 +15,18 @@ class Email:
         POP3Agent.pass_(emailPassword)
 
     def RetrieveNewEmails(self):
+        inboxStatus = POP3Agent.stat()
+        if not inboxStatus[0] == 0
+            
+
+    def readEmails(self):
 
 
-class Mail(File):
 
+class Mail(FileLoader):
+    def __init__(self, fileName):
+        fileOpened = open(fileName, "r")
+        self.text = fileOpened.read()
 
 
 
