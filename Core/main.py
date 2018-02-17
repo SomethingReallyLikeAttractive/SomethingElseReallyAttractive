@@ -1,5 +1,13 @@
 from Loader import FileLoader
 from Convertor import ENGLISH
+from time import time
 
-b = FileLoader("xx.txt")
+
+#dateLastOpened = 0
+#dateFile = 
+
+# Test code
+b = FileLoader("Text.txt")
 b.sendTextToRasp()
+
+
