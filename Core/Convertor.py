@@ -7,8 +7,66 @@ pin4 = 25
 pin5 = 7
 pin6 = 3
 
+englishDict = setUpDict()
+
+def setUpDict():
+    englishDict = dict()
+    englishDict['A'] = [1,0,0,0,0,0]
+    englishDict['B'] = [1,1,0,0,0,0]
+    englishDict['C'] = [1,0,0,1,0,0]
+    englishDict['D'] = [1,0,0,1,1,0]
+    englishDict['E'] = [1,0,0,0,1,0]
+    englishDict['F'] = [1,1,0,1,0,0]
+    englishDict['G'] = [1,1,0,1,1,0]
+    englishDict['H'] = [1,1,0,0,1,0]
+    englishDict['I'] = [0,1,0,1,0,0]
+    englishDict['J'] = [0,1,0,1,1,0]
+    englishDict['K'] = [1,0,1,0,0,0]
+    englishDict['L'] = [1,1,1,0,0,0]
+    englishDict['M'] = [1,0,1,1,0,0]
+    englishDict['N'] = [1,0,1,1,1,0]
+    englishDict['O'] = [1,0,1,0,1,0]
+    englishDict['P'] = [1,1,1,1,0,0]
+    englishDict['Q'] = [1,1,1,1,1,0]
+    englishDict['R'] = [1,1,1,0,1,0]
+    englishDict['S'] = [0,1,1,1,0,0]
+    englishDict['T'] = [0,1,1,1,1,0]
+    englishDict['U'] = [1,0,1,0,0,1]
+    englishDict['V'] = [1,1,1,0,0,1]
+    englishDict['W'] = [0,1,0,1,1,1]
+    englishDict['X'] = [1,0,1,1,0,1]
+    englishDict['Y'] = [1,0,1,1,1,1]
+    englishDict['Z'] = [1,0,1,0,1,1]
+    englishDict['#'] = [0,0,1,1,1,1]
+    englishDict['0'] = [0,1,0,1,1,0]
+    englishDict['1'] = [1,0,0,0,0,0]
+    englishDict['2'] = [1,1,0,0,0,0]
+    englishDict['3'] = [1,0,0,1,0,0]
+    englishDict['4'] = [1,0,0,1,1,0]
+    englishDict['5'] = [1,0,0,0,1,0]
+    englishDict['6'] = [1,1,0,1,0,0]
+    englishDict['7'] = [1,1,0,1,1,0]
+    englishDict['8'] = [1,1,0,0,1,0]
+    englishDict['9'] = [0,1,0,1,0,0]
+    englishDict['.'] = [0,1,0,0,1,1]
+    englishDict[','] = [0,1,0,0,0,0]
+    englishDict['!'] = [0,1,1,0,1,0]
+    englishDict['?'] = [0,1,1,0,0,1]
+    englishDict[':'] = [0,1,0,0,1,0]
+    englishDict[';'] = [0,1,1,0,0,0]
+    englishDict['-'] = [0,0,1,0,0,1]
+    englishDict['('] = [0,1,1,0,1,1]
+    englishDict[')'] = [0,1,1,0,1,1]
+    englishDict['<'] = [1,1,0,0,0,1]
+    englishDict['>'] = [0,0,1,1,1,0]
+    englishDict['/'] = [0,0,1,1,0,0]
+    englishDict['"'] = [0,1,1,0,0,1]
+    englishDict['\\'] = [0,0,1,0,0,0]
+    return englishDict
+
 class Convertor:
     def __init__(self):
+        setUpDict()
         GPIO.setmode(GPIO.BCM)
         GPIO.setup(pin1, GPIO.OUT)
         GPIO.setup(pin2, GPIO.OUT)
@@ -20,16 +78,16 @@ class Convertor:
     # Convert unrecognizable character into Unrecognizable(R).
     def filterUnrecognizable(self, c):
         if not self.isConvertable(c):
-            c = '{'
+            c = englishDict['{']
         return c
 
     # Check if a character is convertable.
     def isConvertable(self, a):
-        return a in dict
+        return a in englishDict
 
     # Convert a letter to a list of binary commands.
     def convertor(self, a):
-        return dict[a]
+        return englishDict[a]
 
     # Change an array of binary Braille dot commands to actual output commands.
     # GPIO 16 for left-upper; GPIO 20 for left-middle; GPIO 21 for left-down;
@@ -76,57 +134,3 @@ class Convertor:
         #GPIO.output(high, 1)
         #GPIO.output(low, 0)
         GPIO.cleanup()
-
-
-dict = {'A':[1,0,0,0,0,0],
-        'B':[1,1,0,0,0,0],
-        'C':[1,0,0,1,0,0],
-        'D':[1,0,0,1,1,0],
-        'E':[1,0,0,0,1,0],
-        'F':[1,1,0,1,0,0],
-        'G':[1,1,0,1,1,0],
-        'H':[1,1,0,0,1,0],
-        'I':[0,1,0,1,0,0],
-        'J':[0,1,0,1,1,0],
-        'K':[1,0,1,0,0,0],
-        'L':[1,1,1,0,0,0],
-        'M':[1,0,1,1,0,0],
-        'N':[1,0,1,1,1,0],
-        'O':[1,0,1,0,1,0],
-        'P':[1,1,1,1,0,0],
-        'Q':[1,1,1,1,1,0],
-        'R':[1,1,1,0,1,0],
-        'S':[0,1,1,1,0,0],
-        'T':[0,1,1,1,1,0],
-        'U':[1,0,1,0,0,1],
-        'V':[1,1,1,0,0,1],
-        'W':[0,1,0,1,1,1],
-        'X':[1,0,1,1,0,1],
-        'Y':[1,0,1,1,1,1],
-        'Z':[1,0,1,0,1,1],
-        '#':[0,0,1,1,1,1],
-        '0':[0,1,0,1,1,0],
-        '1':[1,0,0,0,0,0],
-        '2':[1,1,0,0,0,0],
-        '3':[1,0,0,1,0,0],
-        '4':[1,0,0,1,1,0],
-        '5':[1,0,0,0,1,0],
-        '6':[1,1,0,1,0,0],
-        '7':[1,1,0,1,1,0],
-        '8':[1,1,0,0,1,0],
-        '9':[0,1,0,1,0,0],
-        '.':[0,1,0,0,1,1],
-        ',':[0,1,0,0,0,0],
-        '!':[0,1,1,0,1,0],
-        '?':[0,1,1,0,0,1],
-        ':':[0,1,0,0,1,0],
-        ';':[0,1,1,0,0,0],
-        '-':[0,0,1,0,0,1],
-        '(':[0,1,1,0,1,1],
-        ')':[0,1,1,0,1,1],
-        '<':[1,1,0,0,0,1],
-        '>':[0,0,1,1,1,0],
-        '/':[0,0,1,1,0,0],
-        '"':[0,1,1,0,0,1],
-        '\'':[0,0,1,0,0,0],
-        }
