@@ -73,7 +73,7 @@ class Convertor:
         GPIO.setup(PIN4, GPIO.OUT)
         GPIO.setup(PIN5, GPIO.OUT)
         GPIO.setup(PIN6, GPIO.OUT)
-	GPIO.setmode(GPIO.BCM)
+        GPIO.setmode(GPIO.BCM)
     # Convert unrecognizable character into Unrecognizable(R); convert lower cases to upper cases.
     def processString(self, c):
         if c.islower():
