@@ -78,7 +78,7 @@ class Convertor:
     def processString(self, c):
         if c.islower():
             c = c.upper()
-        else if not self.isConvertable(c):
+        elif not self.isConvertable(c):
             c = '{'
         return c
 
