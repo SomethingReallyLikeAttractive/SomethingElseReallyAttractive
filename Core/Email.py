@@ -14,6 +14,8 @@ class Email:
         POP3Agent.user(emailAddress)
         POP3Agent.pass_(emailPassword)
 
+    def RetrieveNewEmails(self):
+        
 
 class Mail(File):
 
