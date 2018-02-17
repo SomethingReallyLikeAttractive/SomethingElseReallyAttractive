@@ -9,7 +9,6 @@ pin6 = 3
 
 class Convertor:
     def __init__(self):
-        GPIO.cleanup()
         GPIO.setmode(GPIO.BCM)
         GPIO.setup(pin1, GPIO.OUT)
         GPIO.setup(pin2, GPIO.OUT)
@@ -30,7 +29,7 @@ class Convertor:
 
     # Convert a letter to a list of binary commands.
     def convertor(self, a):
-        return dict.get(a)
+        return dict[a]
 
     # Change an array of binary Braille dot commands to actual output commands.
     # GPIO 16 for left-upper; GPIO 20 for left-middle; GPIO 21 for left-down;
