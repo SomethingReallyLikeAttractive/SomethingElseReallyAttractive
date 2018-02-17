@@ -7,7 +7,7 @@ PIN4 = 25
 PIN5 = 7
 PIN6 = 3
 
-englishDict = setUpDict()
+ENGLISH = setUpDict()
 
 def setUpDict():
     englishDict = dict()
@@ -77,16 +77,16 @@ class Convertor:
     # Convert unrecognizable character into Unrecognizable(R).
     def filterUnrecognizable(self, c):
         if not self.isConvertable(c):
-            c = englishDict['{']
+            c = '{'
         return c
 
     # Check if a character is convertable.
     def isConvertable(self, a):
-        return a in englishDict
+        return a in ENGLISH
 
     # Convert a letter to a list of binary commands.
     def convertor(self, a):
-        return englishDict[a]
+        return ENGLISH[a]
 
     # Change an array of binary Braille dot commands to actual output commands.
     # GPIO 16 for left-upper; GPIO 20 for left-middle; GPIO 21 for left-down;
