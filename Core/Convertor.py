@@ -1,11 +1,11 @@
 import RPi.GPIO as GPIO
 
-pin1 = 14
-pin2 = 18
-pin3 = 23
-pin4 = 25
-pin5 = 7
-pin6 = 3
+PIN1 = 14
+PIN2 = 18
+PIN3 = 23
+PIN4 = 25
+PIN5 = 7
+PIN6 = 3
 
 englishDict = setUpDict()
 
@@ -68,12 +68,12 @@ class Convertor:
     def __init__(self):
         setUpDict()
         GPIO.setmode(GPIO.BCM)
-        GPIO.setup(pin1, GPIO.OUT)
-        GPIO.setup(pin2, GPIO.OUT)
-        GPIO.setup(pin3, GPIO.OUT)
-        GPIO.setup(pin4, GPIO.OUT)
-        GPIO.setup(pin5, GPIO.OUT)
-        GPIO.setup(pin6, GPIO.OUT)
+        GPIO.setup(PIN1, GPIO.OUT)
+        GPIO.setup(PIN2, GPIO.OUT)
+        GPIO.setup(PIN3, GPIO.OUT)
+        GPIO.setup(PIN4, GPIO.OUT)
+        GPIO.setup(PIN5, GPIO.OUT)
+        GPIO.setup(PIN6, GPIO.OUT)
 
     # Convert unrecognizable character into Unrecognizable(R).
     def filterUnrecognizable(self, c):
@@ -97,34 +97,34 @@ class Convertor:
         low = list()
 
         if booleanValues[0] == 1:
-            high.append(pin1)
+            high.append(PIN1)
         else:
-            low.append(pin1)
+            low.append(PIN1)
 
         if booleanValues[1] == 1:
-            high.append(pin2)
+            high.append(PIN2)
         else:
-            low.append(pin2)
+            low.append(PIN2)
 
         if booleanValues[2] == 1:
-            high.append(pin3)
+            high.append(PIN3)
         else:
-            low.append(pin3)
+            low.append(PIN3)
 
         if booleanValues[3] == 1:
-            high.append(pin4)
+            high.append(PIN4)
         else:
-            low.append(pin4)
+            low.append(PIN4)
 
         if booleanValues[4] == 1:
-            high.append(pin5)
+            high.append(PIN5)
         else:
-            low.append(pin5)
+            low.append(PIN5)
 
         if booleanValues[5] == 1:
-            high.append(pin6)
+            high.append(PIN6)
         else:
-            low.append(pin6)
+            low.append(PIN6)
 
         for c in high:
             print(c)
