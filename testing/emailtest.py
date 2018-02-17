@@ -1,10 +1,14 @@
 import imaplib
+import time
 
-username = 'yhong29@jh.edu'
-password = 'does3874SIGN'
+host = "outlook.office365.com"
+port = 993
 
-pop3_ssl_host = 'outlook.office365.com'
+username = "yhong29@jh.edu"
+password = "does3874SIGN"
 
-popserver = poplib.POP3_SSL(pop3_ssl_host)
-popserver.user(username)
-popserver.pass_(password)
+mail = imaplib.IMAP4_SSL(host, port)
+mail.login(username, password)
+mail.select("inbox")
+
+
