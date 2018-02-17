@@ -1,17 +1,22 @@
 import poplib
+import File
 
 class Email:
     POP3Agent = None
     emailAddress = ""
-    POP3Address = ""
     emailPassword = ""
 
     def __init__(self, addressInput, POP3Input, passwordInput):
-        POP3Agent = poplib.POP3('')
-
+        POP3Agent = poplib.POP3(POP3Input)
         emailAddress = addressInput
-        POP3Address = POP3Input
         emailPassword = passwordInput
 
-    
+        POP3Agent.user(emailAddress)
+        POP3Agent.pass_(emailPassword)
+
+
+class Mail(File):
+
+
+
 
