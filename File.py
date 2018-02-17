@@ -3,8 +3,8 @@ from Convertor import Convertor
 class File:
     _fileText = None
 
-    def _init_(self):
-        fileOpened = open("text.txt", "r")
+    def _init_(self, fileName):
+        fileOpened = open(fileName, "r")
         self._fileText = fileOpened.read()
 
     def sendFileToRasp(self):

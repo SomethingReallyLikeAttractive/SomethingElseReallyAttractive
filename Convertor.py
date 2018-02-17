@@ -62,8 +62,13 @@ class Convertor:
         else:
             low.append(26)
 
-        GPIO.output(high, 1)
-        GPIO.output(low, 0)
+        for c in high:
+            print(c)
+        print("----")
+        for c in low:
+            print(c)
+        #GPIO.output(high, 1)
+        #GPIO.output(low, 0)
 
 
 dict = {'A':[1,0,0,0,0,0],
@@ -110,7 +115,6 @@ dict = {'A':[1,0,0,0,0,0],
         ':':[0,1,0,0,1,0],
         ';':[0,1,1,0,0,0],
         '-':[0,0,1,0,0,1],
-        '–':[0,0,1,0,0,1],
         '(':[0,1,1,0,1,1],
         ')':[0,1,1,0,1,1],
         '<':[1,1,0,0,0,1],
