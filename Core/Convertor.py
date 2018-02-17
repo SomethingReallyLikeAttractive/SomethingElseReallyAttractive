@@ -66,7 +66,6 @@ def setUpDict():
 
 class Convertor:
     def __init__(self):
-        setUpDict()
         GPIO.setmode(GPIO.BCM)
         GPIO.setup(PIN1, GPIO.OUT)
         GPIO.setup(PIN2, GPIO.OUT)
