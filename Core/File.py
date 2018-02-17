@@ -1,4 +1,4 @@
-import Convertor
+from Convertor import Convertor
 import time
 
 class File:
