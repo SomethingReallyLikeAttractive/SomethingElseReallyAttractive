@@ -82,7 +82,7 @@ class Convertor:
 
     # Check if a character is convertable.
     def isConvertable(self, a):
-        return a in ENGLISH
+        return (a in ENGLISH)
 
     # Convert a letter to a list of binary commands.
     def convertor(self, a):
