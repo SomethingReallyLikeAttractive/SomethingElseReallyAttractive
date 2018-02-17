@@ -17,7 +17,6 @@ class Email:
     def RetrieveNewEmails(self):
         inboxStatus = POP3Agent.stat()
         if not inboxStatus[0] == 0
-            
 
     def readEmails(self):
 
