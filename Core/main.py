@@ -1,5 +1,5 @@
-from File import File
+from Loader import FileLoader
 from Convertor import ENGLISH
 
-b = File("xx.txt")
-b.sendFileToRasp()
+b = FileLoader("xx.txt")
+b.sendTextToRasp()

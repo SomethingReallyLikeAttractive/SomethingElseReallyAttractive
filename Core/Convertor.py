@@ -87,7 +87,7 @@ class Convertor:
         return a in ENGLISH
 
     # Convert a letter to a list of binary commands.
-    def convertor(self, a):
+    def convert(self, a):
         return ENGLISH[a]
 
     # Change an array of binary Braille dot commands to actual output commands.
