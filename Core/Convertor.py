@@ -74,9 +74,11 @@ class Convertor:
         GPIO.setup(PIN5, GPIO.OUT)
         GPIO.setup(PIN6, GPIO.OUT)
 
-    # Convert unrecognizable character into Unrecognizable(R).
-    def filterUnrecognizable(self, c):
-        if not self.isConvertable(c):
+    # Convert unrecognizable character into Unrecognizable(R); convert lower cases to upper cases.
+    def processString(self, c):
+        if c.islower():
+            c = c.upper()
+        else if not self.isConvertable(c):
             c = '{'
         return c
 

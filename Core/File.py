@@ -10,5 +10,5 @@ class File:
     def sendFileToRasp(self):
         fileConvertor = Convertor()
         for c in self._fileText:
-            a = fileConvertor.filterUnrecognizable(c)
+            a = fileConvertor.processString(c)
             fileConvertor.output(fileConvertor.convertor(a))
