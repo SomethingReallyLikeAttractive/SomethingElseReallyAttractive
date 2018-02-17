@@ -1,4 +1,5 @@
 from Convertor import Convertor
+import time
 
 class File:
     _fileText = None
@@ -12,3 +13,4 @@ class File:
         for c in self._fileText:
             a = fileConvertor.processString(c)
             fileConvertor.output(fileConvertor.convertor(a))
+            time.sleep(1)
