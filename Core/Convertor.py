@@ -7,8 +7,6 @@ PIN4 = 25
 PIN5 = 7
 PIN6 = 3
 
-ENGLISH = setUpDict()
-
 def setUpDict():
     englishDict = dict()
     englishDict['A'] = [1,0,0,0,0,0]
@@ -63,6 +61,9 @@ def setUpDict():
     englishDict['"'] = [0,1,1,0,0,1]
     englishDict['{'] = [0,0,1,0,0,0]
     return englishDict
+
+ENGLISH = setUpDict()
+
 
 class Convertor:
     def __init__(self):
