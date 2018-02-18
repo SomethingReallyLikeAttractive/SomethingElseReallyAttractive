@@ -15,7 +15,7 @@ fileLoader.sendTextToRasp()
 
 
 while True:
-    os.system('fswebcam -r 4352x3264 --no-banner img.jpg && tesseract img.jpg Picwords.txt')
+    os.system('fswebcam -r 4352x3264 --no-banner img.jpg && tesseract img.jpg Picwords')
     detectedLoader = FileLoader("Picwords.txt")
     detectedLoader.sendTextToRasp()
     time.sleep(0.05)
