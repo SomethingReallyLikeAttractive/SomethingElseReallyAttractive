@@ -11,6 +11,9 @@ class Loader:
             convertor.output(convertor.convert(a))
             time.sleep(1)
 
+    def returnText(self):
+        return self.text
+
 class FileLoader(Loader):
     def __init__(self, fileName):
         fileOpened = open(fileName, "r")
