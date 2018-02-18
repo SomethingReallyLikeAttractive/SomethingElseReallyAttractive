@@ -136,4 +136,3 @@ class Convertor:
 
         GPIO.output(high, 1)
         GPIO.output(low, 0)
-        GPIO.cleanup()
