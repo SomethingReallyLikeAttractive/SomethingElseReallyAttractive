@@ -12,7 +12,7 @@ GPIO.setwarnings(False)
 GPIO.setmode(GPIO.BCM)
 GPIO.setup(BUTTONPIN, GPIO.IN)
 
-display = Display()
+#display = Display()
 
 try:
     while True:
@@ -20,7 +20,7 @@ try:
         detectedLoader = FileLoader("Picwords.txt")
         print("The following word is detected: ")
         print(detectedLoader.returnText())
-        display.updateText(detectedLoader.returnText())
+        #display.updateText(detectedLoader.returnText())
         detectedLoader.sendTextToRasp()
 except KeyboardInterrupt:
     pass
