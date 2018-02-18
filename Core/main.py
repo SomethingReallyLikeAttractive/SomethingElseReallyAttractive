@@ -22,4 +22,5 @@ except KeyboardInterrupt:
 
 GPIO.output([14, 18, 23, 25, 7, 12], 0)
 os.system('rm Picwords.txt')
+os.system('rm img.jpg')
 GPIO.cleanup()
