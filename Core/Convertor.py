@@ -94,6 +94,12 @@ class Convertor:
     # GPIO 16 for left-upper; GPIO 20 for left-middle; GPIO 21 for left-down;
     # GPIO 13 for right-upper; GPIO 19 for right-middle; GPIO 26 for right-down.
     def output(self, booleanValues):
+        GPIO.setup(PIN1, GPIO.OUT)
+        GPIO.setup(PIN2, GPIO.OUT)
+        GPIO.setup(PIN3, GPIO.OUT)
+        GPIO.setup(PIN4, GPIO.OUT)
+        GPIO.setup(PIN5, GPIO.OUT)
+        GPIO.setup(PIN6, GPIO.OUT)
         GPIO.setmode(GPIO.BCM)
         high = list()
         low = list()
