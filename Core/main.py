@@ -24,3 +24,6 @@ fileLoader.sendTextToRasp()
     #detectedLoader = StringLoader(wordDetected)
     #detectedLoader.sendTextToRasp()
     #time.sleep(0.05)
+
+GPIO.output([14, 18, 23, 25, 7, 12], 0)
+GPIO.cleanup()
