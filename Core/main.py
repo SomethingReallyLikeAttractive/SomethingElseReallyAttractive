@@ -19,4 +19,5 @@ while True:
     time.sleep(0.05)
 
 GPIO.output([14, 18, 23, 25, 7, 12], 0)
+os.system('rm Picwords.txt')
 GPIO.cleanup()
