@@ -1,9 +1,10 @@
-from flask import Flask
+from flask import Flask, Response, request
 app = Flask(__name__)
 
-@app.route("/")
-def index():
-	return "<html><body><h1>Test site running under Flask</h1></body></html>"
+@app.route('/', methods=['POST'])
+def get_data():
+	print('Recieved from client: {}'.format(request.data))
+	return Response('We recieved something…')
 
 if __name__ == "__main__":
-	app.run(host='0.0.0.0',debug=True)
+	app.run(debug=True)
