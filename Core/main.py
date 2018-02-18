@@ -2,7 +2,8 @@ from Loader import FileLoader, StringLoader
 from Convertor import ENGLISH
 import RPi.GPIO as GPIO
 import time
-import subprocess
+#import subprocess
+import os
 
 BUTTONPIN = 21
 
@@ -14,10 +15,8 @@ fileLoader.sendTextToRasp()
 
 
 while True:
-    result = subprocess.check_output('echo yi')
-    #result = subprocess.check_output('fswebcam -r 4352x3264 --no-banner img.jpg && tesseract img.jpg Picwords.txt')
-    wordDetected = result.decode("utf-8")
-    detectedLoader = StringLoader(wordDetected)
+    os.system('fswebcam -r 4352x3264 --no-banner img.jpg && tesseract img.jpg Picwords.txt')
+    detectedLoader = FileLoader("Picwords.txt")
     detectedLoader.sendTextToRasp()
     time.sleep(0.05)
 
