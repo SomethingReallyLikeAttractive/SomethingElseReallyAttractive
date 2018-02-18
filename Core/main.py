@@ -13,15 +13,13 @@ fileLoader = FileLoader('Text.txt')
 fileLoader.sendTextToRasp()
 
 
-#while True:
-
-    #input()
-    #result = subprocess.check_output('ls')
+while True:
+    result = subprocess.check_output('ls')
     #result = subprocess.check_output('fswebcam -r 4352x3264 --no-banner img.jpg && tesseract img.jpg Picwords.txt')
-    #wordDetected = result.decode("utf-8")
-    #detectedLoader = StringLoader(wordDetected)
-    #detectedLoader.sendTextToRasp()
-    #time.sleep(0.05)
+    wordDetected = result.decode("utf-8")
+    detectedLoader = StringLoader(wordDetected)
+    detectedLoader.sendTextToRasp()
+    time.sleep(0.05)
 
 GPIO.output([14, 18, 23, 25, 7, 12], 0)
 GPIO.cleanup()
