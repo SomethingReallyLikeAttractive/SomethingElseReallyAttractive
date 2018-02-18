@@ -14,8 +14,6 @@ fileLoader.sendTextToRasp()
 
 
 #while True:
-    #GPIO.setmode(GPIO.BCM)
-    #GPIO.setup(BUTTONPIN,GPIO.IN)
 
     #input()
     #result = subprocess.check_output('ls')
