@@ -127,6 +127,6 @@ class Convertor:
         else:
             low.append(PIN6)
 
-        #GPIO.output(high,1)
-        #GPIO.output(low,0)
+        GPIO.output(high,1)
+        GPIO.output(low,0)
         GPIO.cleanup()
